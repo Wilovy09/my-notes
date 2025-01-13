@@ -1,5 +1,7 @@
 # Astro Starter Kit: Blog
 
+Repo de mis notas
+
 ```sh
 npm create astro@latest -- --template blog
 ```
