@@ -2,7 +2,7 @@
 title: "NixOS en Raspberry Pi"
 description: "Instalando NixOS en una Raspberry Pi 3B+"
 pubDate: "Jan 08 2025"
-heroImage: "/blog-placeholder-1.jpg"
+heroImage: "/nixpi.png"
 ---
 
 # Instalando NixOS en una Pi 3 B+
