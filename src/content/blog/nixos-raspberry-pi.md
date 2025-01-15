@@ -1,8 +1,8 @@
 ---
-title: 'NixOS en Raspberry Pi'
-description: 'Instalando NixOS en una Raspberry Pi 3B+'
-pubDate: 'Jan 08 2025'
-heroImage: '/blog-placeholder-3.jpg'
+title: "NixOS en Raspberry Pi"
+description: "Instalando NixOS en una Raspberry Pi 3B+"
+pubDate: "Jan 08 2025"
+heroImage: "/blog-placeholder-1.jpg"
 ---
 
 # Instalando NixOS en una Pi 3 B+
@@ -130,7 +130,7 @@ experimental-features = nix-command flakes
     openssh
     vim
   ];
-  
+
   security.polkit.enable = true;
   services.dbus = {
     enable = true;
@@ -210,7 +210,7 @@ sudo nixos-rebuild switch -I nixos-config=/etc/nixos/configuration.nix
     enable = true;
     ports = [22];
   };
-  
+
   security.polkit.enable = true;
   services.dbus = {
     enable = true;
