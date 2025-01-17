@@ -41,7 +41,7 @@ sudo dphys-swapfile swapon
 sudo reboot
 ```
 
-## Generando `.img` de NixOS
+## Generando `.img` de NixOS para Raspberry
 
 ```bash
 sudo apt install curl xz-utils git
@@ -57,13 +57,13 @@ curl -L https://nixos.org/nix/install | sh
 . /home/wilovy/.nix-profile/etc/profile.d/nix.sh
 ```
 
-5. Creamos un archivo `~/.config/nix/nix.conf`
+5. Creamos un archivo `~/.config/nix/nix.conf` con el contenido:
 
 ```conf
 experimental-features = nix-command flakes
 ```
 
-6. Creamos un archivo `flake.nix` con el siguiente contenido:
+6. Creamos un archivo `flake.nix` (se puede crear donde sea, recomiendo que sea en ~) con el siguiente contenido:
 
 ```nix
 {
@@ -92,7 +92,9 @@ experimental-features = nix-command flakes
       };
       users = {
         users.users = {
+        # Aqui podemos cambiar el nombre de nuestro usuario que queremos crear.
           admin = {
+            # Esta contraseña da igual, se cambiara al final solo sirve al inicio
             password = "admin123";
             isNormalUser = true;
             extraGroups = ["wheel" "networkmanager"];
@@ -198,7 +200,8 @@ sudo nixos-rebuild switch -I nixos-config=/etc/nixos/configuration.nix
 
   time.timeZone = "America/Monterrey";
 
-  users.users.wilovy = {
+  # El nombre del usuario debe ser el mismo que habiamos asignado al inicio
+  users.users.admin = {
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager" "docker"];
   };
